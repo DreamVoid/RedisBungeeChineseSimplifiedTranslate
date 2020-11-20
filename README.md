@@ -1,12 +1,12 @@
-# Home
+# 主页
 
-**RedisBungee** is the leading player synchronization system for BungeeCord.
+**RedisBungee**是先进的BungeeCord玩家同步系统。
 
-RedisBungee shares data using the [Redis](http://redis.io/) key-value store.
+RedisBungee使用[Redis](http://redis.io/)存储并共享数据。
 
-RedisBungee is currently used in production on several large and well-known Minecraft networks, making it a logical addition to your network if you are looking to grow.
+RedisBungee当前正在被多个大型并知名的Minecraft服务器中使用，如果您想发展您的服务器，它可以很轻松的添加到您的服务器中。
 
-## Features. \#\#
+## 功能. \#\#
 
 * **Synchronizes most player information**, including network count.
 * **Graceful degradation**, If a BungeeCord instance goes down, your network doesn't go down. Only a portion of it does.
