@@ -113,5 +113,5 @@ The source code is available on [GitHub](https://github.com/thechunknetwork/Redi
 
 ## Do you have a Maven repository? \#\#
 
-md\_5-snapshotshttp://repo.md-5.net/content/repositories/snapshots/
+md\_5-snapshots[http://repo.md-5.net/content/repositories/snapshots/](http://repo.md-5.net/content/repositories/snapshots/)
 

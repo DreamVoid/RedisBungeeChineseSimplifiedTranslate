@@ -1,4 +1,4 @@
-# 安装
+# Installation
 
 **RedisBungee**是先进的BungeeCord玩家同步系统。
 

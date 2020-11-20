@@ -18,7 +18,7 @@ The Javadoc for the API is available from [md\_5's build server](http://ci.md-5.
 
 The following repository has all RedisBungee builds:
 
-md\_5-snapshotshttp://repo.md-5.net/content/repositories/snapshots/
+md\_5-snapshots[http://repo.md-5.net/content/repositories/snapshots/](http://repo.md-5.net/content/repositories/snapshots/)
 
 Afterwards, you can add the dependency:
 
