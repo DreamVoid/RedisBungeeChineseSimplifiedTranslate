@@ -1,38 +1,39 @@
-# Installation
+# 安装
 
-**RedisBungee** is the leading player synchronization system for BungeeCord.
+**RedisBungee**是先进的BungeeCord玩家同步系统。
 
-Installing RedisBungee and connecting it to your other Bungees is easy.
+安装RedisBungee并连接到您的BungeeCord服务端非常容易。
 
-## Requirements \#\#
+## 要求
 
-* A [Redis](http://redis.io/) server.
-  * If you are running Debian 8 or Ubuntu 14.04 and above, a suitable server can be installed by running apt-get install redis-server as root.
-  * If you are running CentOS 6, you'll need to compile Redis from source. The version in EPEL is not supported by RedisBungee as of 0.3.8.
-  * If you are running CentOS 7, a suitable server can be installed by running yum install redis.
-  * If you do not have Redis available in your system repositories, or it doesn't contain Redis 2.6 or above, you can download and install it from the [official website](http://redis.io/download).
-* Properly synchronized time between all your Bungees. RedisBungee will have problems when your system time is around 27 seconds earlier than another Bungee's. Configuring NTP will usually take care of this for you.
+* 一个[Redis](http://redis.io/)服务器。
+  * 如果您正在运行Debian 8或Ubuntu 14.04及以上，您可以使用root用户运行指令 apt-get install redis-server 快速安装。
+  * 如果您正在运行CentOS 6，您需要下载并编译Redis的源代码。从0.3.8版本开始，RedisBungee不支持任何EPEL版本
+  * 如果您正在运行CentOS 7, 您可以运行指令 yum install redis 快速安装。
+  * 如果您的系统不支持直接安装Redis，或其版本不在2.6及以上您需要到其[官方网站](http://redis.io/download)下载Redis。
+  * 如果您正在运行Windows，您可以参阅[在Windows上安装Redis](http://redis.io/download)。
+* 确保您用于运行BungeeCord服务端的所有服务器的系统时间同步。如果一个服务器和另一个服务器的系统时间差大于27秒，RedisBungee将会出现问题。配置NTP通常可用解决此问题。
 
-## RedisBungee 0.3 and above \#\#
+## RedisBungee 0.3 及以上
 
-* Download RedisBungee and place it in your proxy's plugins folder.
-* Start then stop the proxy.
-* Modify plugins/RedisBungee/config.yml, especially the server-id and redis-server. See the configuration page for more details.
-* Start and enjoy!
+* 下载RedisBungee插件文件并放置在BungeeCord服务端的插件文件夹。
+* 启动一次BungeeCord服务端，然后关闭。
+* 修改位于 plugins/RedisBungee/config.yml 的文件，调整各类配置尤其是“server-id”项和“redis-server”项。您可以参阅“配置”一节了解更多信息。
+* 再次启动BungeeCord服务端，然后即可开始享受！
 
-## RedisBungee 0.2.5 and below \#\#
+## RedisBungee 0.2.5 及以下
 
-* Download RedisBungee and place it in your proxy's plugins folder.
-* Start then stop the proxy.
-* Modify plugins/RedisBungee/config.yml, especially the server-id, redis-server, and linked-servers. It is imperative you include all your proxies in the linked-servers definition!
-* Start and enjoy!
+* 下载RedisBungee插件文件并放置在BungeeCord服务端的插件文件夹。
+* 启动一次BungeeCord服务端，然后关闭。
+* 修改位于 plugins/RedisBungee/config.yml 的文件，调整各类配置尤其是“server-id”项、“redis-server”项和“linked-servers”项。确保“linked-servers”项中包含您的所有BungeeCord服务端。
+* 再次启动BungeeCord服务端，然后即可开始享受！
 
-### Note about modules \#\#\#
+### 有关模块的注意事项
 
-As of build `#787` and above, BungeeCord now includes a modules system. RedisBungee 0.3 will automatically load after these load, but this is only supported by new builds of BungeeCord. If you must use 0.2.x, you will need to disable cmd\_list and cmd\_find so RedisBungee can replace them. To do this:
+从BungeeCord版本`#787`开始，BungeeCord加入了一个模块系统。RedisBungee 0.3 将会在这些模块加载后自动加载，但这仅支持较新版本的BungeeCord。如果您必须使用0.2.x版本，您必须禁用cmd\_list和cmd\_find以让RedisBungee可以接管这些命令。请按下列步骤操作：
 
-* Stop your proxy.
-* Delete modules/cmd\_list.jar and modules/cmd\_find.jar.
-* Edit modules.yml and remove the lines - jenkins://cmd\_list and - jenkins://cmd\_find.
-* Restart your proxy.
+* 停止BungeeCord。
+* 删除“modules/cmd\_list.jar”文件和“modules/cmd\_find.jar”文件。
+* 编辑“modules.yml”文件并移除以下字段：“jenkins://cmd\_list”和“jenkins://cmd\_find”，然后保存文件。
+* 重新启动BungeeCord。
 

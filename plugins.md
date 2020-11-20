@@ -1,6 +1,6 @@
 # Plugins
 
-**RedisBungee** is the leading player synchronization system for BungeeCord.
+**RedisBungee**是先进的BungeeCord玩家同步系统。
 
 The following \(exhaustive\) list of plugins below are RedisBungee-aware. If your plugin supports RedisBungee, let me know and I will add it to this page.
 
