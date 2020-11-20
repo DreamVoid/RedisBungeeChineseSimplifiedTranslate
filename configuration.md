@@ -1,4 +1,4 @@
-# Configuration
+# 配置
 
 **RedisBungee** is the leading player synchronization system for BungeeCord.
 

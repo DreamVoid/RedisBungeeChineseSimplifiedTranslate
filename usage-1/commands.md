@@ -1,4 +1,4 @@
-# Commands
+# 命令
 
 **RedisBungee** is the leading player synchronization system for BungeeCord.
 

@@ -1,19 +1,19 @@
 # Table of contents
 
-* [Home](README.md)
+* [主页](README.md)
 
 ## 安装 <a id="installtion"></a>
 
 ---
 
-* [Installation](installation.md)
-* [Usage](usage.md)
-* [Configuration](configuration.md)
-* [FAQ](faq.md)
+* [安装](installation.md)
+* [用法](usage.md)
+* [配置](configuration.md)
+* [常见问题](faq.md)
 
 ## 用法 <a id="usage-1"></a>
 
-* [Commands](usage-1/commands.md)
+* [命令](usage-1/commands.md)
 * [API](usage-1/api.md)
-* [Plugins](usage-1/plugins.md)
+* [插件](usage-1/plugins.md)
 

@@ -1,4 +1,4 @@
-# FAQ
+# 常见问题
 
 **RedisBungee** is the leading player synchronization system for BungeeCord.
 

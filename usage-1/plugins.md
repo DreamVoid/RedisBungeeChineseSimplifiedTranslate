@@ -1,4 +1,4 @@
-# Plugins
+# 插件
 
 **RedisBungee**是先进的BungeeCord玩家同步系统。
 
