@@ -11,7 +11,7 @@
   * 如果您正在运行CentOS 6，您需要下载并编译Redis的源代码。从0.3.8版本开始，RedisBungee不支持任何EPEL版本
   * 如果您正在运行CentOS 7, 您可以运行指令 yum install redis 快速安装。
   * 如果您的系统不支持直接安装Redis，或其版本不在2.6及以上您需要到其[官方网站](http://redis.io/download)下载Redis。
-  * 如果您正在运行Windows，您可以参阅[在Windows上安装Redis](https://www.redis.com.cn/redis-installation/)。
+  * （译者注）如果您正在运行Windows，您可以参阅[在Windows上安装Redis](https://www.redis.com.cn/redis-installation/)。
 * 确保您用于运行BungeeCord服务端的所有服务器的系统时间同步。如果一个服务器和另一个服务器的系统时间差大于27秒，RedisBungee将会出现问题。配置NTP通常可用解决此问题。
 
 ## RedisBungee 0.3 及以上
