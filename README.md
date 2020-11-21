@@ -18,13 +18,13 @@ RedisBungee当前正在被多个大型并知名的Minecraft服务器中使用，
 ## 安装
 
 * [安装](installtion/installation.md)
-* [用法](https://redisbungee.plugwiki.dreamvoid.ml/installation/usage)
-* [配置](https://redisbungee.plugwiki.dreamvoid.ml/installation/configuration)
-* [常见问题](https://redisbungee.plugwiki.dreamvoid.ml/installation/faq)
+* [用法](installtion/usage.md)
+* [配置](installtion/configuration.md)
+* [常见问题](installtion/faq.md)
 
 ## 用法
 
-* [命令](https://redisbungee.plugwiki.dreamvoid.ml/usage-1/commands)
-* [API](https://redisbungee.plugwiki.dreamvoid.ml/usage-1/api)
-* [支持RedisBungee的插件](https://redisbungee.plugwiki.dreamvoid.ml/usage-1/plugins)
+* [命令](usage-1/commands.md)
+* [API](usage-1/api.md)
+* [支持RedisBungee的插件](usage-1/plugins.md)
 
