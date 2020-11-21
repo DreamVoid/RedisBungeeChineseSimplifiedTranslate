@@ -115,7 +115,7 @@ RedisBungee有意限制其作用范围。通常，如果其涉及到当前版本
 
 ## 源代码在哪里浏览？
 
-源代码在[GitHub](https://github.com/thechunknetwork/RedisBungee)并使用[Unlicense](http://unlicense.org/)协议（在2015年6月9日之前，我使用WTFPL协议）。但是，我更希望您可以提交一个PR。
+本插件在[GitHub](https://github.com/thechunknetwork/RedisBungee)开源并使用[Unlicense](http://unlicense.org/)协议（在2015年6月9日之前，我使用WTFPL协议）。但是，我更希望您可以提交一个PR。
 
 ## 您拥有Maven仓库吗？
 
