@@ -22,7 +22,7 @@ RedisBungee:
 引用自[官方介绍](http://redis.io/topics/introduction):
 
 ```text
-Redis是一个以BSD协议开源的、高级的键值存储。通常被称为“数据结构处理服务器”，因为其开源包含字符串、哈希值、列表和集合。
+Redis是一个以BSD协议开源的、高级的键值存储。通常被称为“数据结构处理服务器”，因为其包含字符串、哈希值、列表和集合。
 ```
 
 ## 我能在Windows使用RedisBungee吗？
