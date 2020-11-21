@@ -79,7 +79,7 @@ private Multimap<String, String> deserializeWithMembers(ByteArrayDataInput input
 
 | 子通道 | 参数 | 响应 | 注释 |
 | :--- | :--- | :--- | :--- |
-| PlayerList | Server或ALL | 此命令将会返回使用逗号分隔的玩家列表\(参见注释\)。| 由于存在一个Bug \(0.3.2已修复\)，第一个字符串将是**Players**而不是**PlayerList**。 |
+| PlayerList | Server或ALL | 此命令将会返回使用逗号分隔的玩家列表\(参见注释\)。 | 由于存在一个Bug \(0.3.2已修复\)，第一个字符串将是**Players**而不是**PlayerList**。 |
 | PlayerCount | Server或ALL | 此命令将会返回玩家人数。 |  |
 | LastOnline | 参见`定义`部分 | 此命令返回后，由[getLastOnline\(\)](http://ci.md-5.net/job/RedisBungee/javadoc/com/imaginarycode/minecraft/redisbungee/RedisBungeeAPI.html#getLastOnline%28java.util.UUID%29)接口输出一个长整数。 | `译者注：给出的链接提示403，因此无法得知此接口的具体用法。` |
 | Proxy | _无_ | 此命令将会返回当前BungeeCord代理的ID | 于0.3.6版本加入 \(2015年6月29日\) |
@@ -87,11 +87,11 @@ private Multimap<String, String> deserializeWithMembers(ByteArrayDataInput input
 
 ## Redis PubSub
 
-RedisBungee支持Redis PubSub。将一个命令通过`redisbungee-allservers`从其中一个BungeeCord服务端发布到所有服务端执行，或通过`redisbungee-<SERVERID>`发布到指定的一个服务端执行。从RedisBungee 0.3版本开始，您也可以从单独的PubSub通道上监听PubSubMessageEvent事件。参见[registerPubSubChannels()](http://ci.md-5.net/job/RedisBungee/javadoc/com/imaginarycode/minecraft/redisbungee/RedisBungeeAPI.html\#registerPubSubChannels\java.lang.String)、[unregisterPubSubChannels()](https://ci.md-5.net/job/RedisBungee/javadoc/com/imaginarycode/minecraft/redisbungee/RedisBungeeAPI.html#unregisterPubSubChannels%28java.lang.String)和[PubSubMessageEvent](http://ci.md-5.net/job/RedisBungee/javadoc/com/imaginarycode/minecraft/redisbungee/events/PubSubMessageEvent.html)。`译者注：有对原文进行小幅修改以便阅读，但访问后均为403错误。`
+RedisBungee支持Redis PubSub。将一个命令通过`redisbungee-allservers`从其中一个BungeeCord服务端发布到所有服务端执行，或通过`redisbungee-<SERVERID>`发布到指定的一个服务端执行。从RedisBungee 0.3版本开始，您也可以从单独的PubSub通道上监听PubSubMessageEvent事件。参见[registerPubSubChannels\(\)](http://ci.md-5.net/job/RedisBungee/javadoc/com/imaginarycode/minecraft/redisbungee/RedisBungeeAPI.html#registerPubSubChannels\java.lang.String)、[unregisterPubSubChannels\(\)](https://ci.md-5.net/job/RedisBungee/javadoc/com/imaginarycode/minecraft/redisbungee/RedisBungeeAPI.html#unregisterPubSubChannels%28java.lang.String)和[PubSubMessageEvent](http://ci.md-5.net/job/RedisBungee/javadoc/com/imaginarycode/minecraft/redisbungee/events/PubSubMessageEvent.html)。`译者注：有对原文进行小幅修改以便阅读，但访问后均为403错误。`
 
 如果您需要调用其中的命令，请确保来自`RedisBungeeCommandSender`！
 
-## 不推荐：使用RedisBungee数据集进行``集成（Tinkering）``
+## 不推荐：使用RedisBungee数据集进行`集成（Tinkering）`
 
 尽管可以实现，但是这将在更待RedisBungee的数据模式后引发问题（这种问题很常见）一个很好的例子是从版本0.2.x升级到0.3.x，插件将开始存储UUID而非用户名。RedisBungee尽一切可能以人性化的方式从其他插件中隐藏自身内部的一些信息，由此您就可以轻松的进行后端更改。
 

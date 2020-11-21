@@ -119,7 +119,7 @@ RedisBungee有意限制其作用范围。通常，如果其涉及到当前版本
 
 ## 您拥有Maven仓库吗？
 
-md\_5-snapshots http://repo.md-5.net/content/repositories/snapshots/
+md\_5-snapshots [http://repo.md-5.net/content/repositories/snapshots/](http://repo.md-5.net/content/repositories/snapshots/)
 
 `译者注：有对原文进行小幅修改以便阅读。`
 

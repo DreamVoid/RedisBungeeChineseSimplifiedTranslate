@@ -67,3 +67,4 @@ exempt-ip-addresses: []
 如果发送给服务端的Ping请求的IP地址处于此列表内，则RedisBungee不会修改BungeeCord返回的响应信息。
 
 `译者注：“BungeeCord返回的响应信息”指的是连接到当前BC端的人数等信息，RedisBungee会修改这个信息（比如人数）为整个服务器连接的人数`
+

@@ -1,15 +1,13 @@
-# 目录
+# Table of contents
 
 * [主页](README.md)
 
 ## 安装 <a id="installtion"></a>
 
----
-
-* [安装](installation.md)
-* [用法](usage.md)
-* [配置](configuration.md)
-* [常见问题](faq.md)
+* [安装](installtion/installation.md)
+* [用法](installtion/usage.md)
+* [配置](installtion/configuration.md)
+* [常见问题](installtion/faq.md)
 
 ## 用法 <a id="usage-1"></a>
 
