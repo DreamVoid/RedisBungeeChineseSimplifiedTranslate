@@ -24,7 +24,7 @@ RedisBungee当前正在被多个大型并知名的Minecraft服务器中使用，
 
 ## 用法
 
-* [命令](usage-1/commands.md)
-* [API](usage-1/api.md)
-* [支持RedisBungee的插件](usage-1/plugins.md)
+* [命令](usage/commands.md)
+* [API](usage/api.md)
+* [支持RedisBungee的插件](usage/plugins.md)
 

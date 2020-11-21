@@ -9,9 +9,9 @@
 * [配置](installtion/configuration.md)
 * [常见问题](installtion/faq.md)
 
-## 用法 <a id="usage-1"></a>
+## 用法 <a id="usage"></a>
 
-* [命令](usage-1/commands.md)
-* [API](usage-1/api.md)
-* [插件](usage-1/plugins.md)
+* [命令](usage/commands.md)
+* [API](usage/api.md)
+* [插件](usage/plugins.md)
 
