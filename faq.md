@@ -27,7 +27,7 @@ Redis是一个以BSD协议开源的、高级的键值存储。通常被称为“
 
 ## 我能在Windows使用RedisBungee吗？
 
-是。据我所知，一些RedisBungee的用户正在使用Windows，并且可以正常工作，但是RedisBungee并不被支持。您必须使用Redis的Microsoft Open Technology端口绑定端口。您也可以使用运行Linux的专用服务器运行Redis服务器，然后在Windows上运行BungeeCord服务端。
+是。据我所知，一些RedisBungee的用户正在使用Windows，并且可以正常工作，但是RedisBungee并不建议这样。您必须使用Redis的Microsoft Open Technology端口绑定端口。您也可以使用运行Linux的专用服务器运行Redis服务器，然后在Windows上运行BungeeCord服务端。
 
 ## RedisBungee支持的最低的Redis版本是多少？
 
