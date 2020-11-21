@@ -67,7 +67,7 @@ RedisBungee当前并不支持Redis Sentinel，因为目前对此的需求不大�
 
 更新RedisBungee以解决此问题。
 
-## 我已经按照RedisBungee但是我的TAB列表并未同步！
+## 我已经安装RedisBungee但是我的TAB列表并未同步！
 
 RedisBungee本身并不能同步TAB列表，因为这不是本插件应该做的。您可以考虑使用诸如[BungeeTabListPlus](http://www.spigotmc.org/resources/bungeetablistplus.313/)等插件。
 
