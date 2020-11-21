@@ -1,18 +1,18 @@
-# Commands
+# 命令
 
-**RedisBungee** is the leading player synchronization system for BungeeCord.
+**RedisBungee**是先进的BungeeCord玩家同步系统。
 
-RedisBungee adds several new commands and modifies the behaviour of others.
+RedisBungee添加了几个实用的命令并接管一些BungeeCord的自带命令。
 
-| Command | Permission Node | Description |
+| 命令 | 权限节点 | 描述 |
 | :--- | :--- | :--- |
-| /glist | bungeecord.command.list | /glist by itself will only give you a player count. /glist showall will display all players. |
-| /find | bungeecord.command.find | /find has not been modified in any substantial way. |
-| /lastseen | redisbungee.command.lastseen | /lastseen allows you to see how long ago someone was on. |
-| /ip | redisbungee.command.ip | /ip allows you to find the IP of a currently online player. |
-| /sendtoall | redisbungee.command.sendtoall | /sendtoall allows you to execute a BungeeCord command on all your networks. |
-| /serverid | redisbungee.command.serverid | /serverid returns the current RedisBungee instance you are on. |
-| /serverids | redisbungee.command.serverids | /serverids returns all server IDs in the network. |
-| /pproxy | redisbungee.command.pproxy | /pproxy will return the proxy a player is connected to. |
-| /plist | redisbungee.command.plist | /plist acts like /glist, but operates on players currently online on a proxy. It accepts an additional proxy argument, i.e. /plist, /plist atl1, and /plist atl1 showall all work on atl1. |
+| /glist | bungeecord.command.list | /glist本身只会返回玩家数量，/glist showall则可以显示所有玩家。 |
+| /find | bungeecord.command.find | /find没有任何实质性的改动。 |
+| /lastseen | redisbungee.command.lastseen | /lastseen允许您查看某个玩家的最后在线时间。 |
+| /ip | redisbungee.command.ip | /ip允许您查看指定在线玩家的IP地址。 |
+| /sendtoall | redisbungee.command.sendtoall | /sendtoall允许您发送命令到所有BungeeCord端并以控制台身份执行。 |
+| /serverid | redisbungee.command.serverid | /serverid返回您当前连接到的RedisBungee端。 |
+| /serverids | redisbungee.command.serverids | /serverids返回服务器中所有已注册`（已连接）`的服务器ID。 |
+| /pproxy | redisbungee.command.pproxy | /pproxy返回指定玩家连接到的服务器的ID。 |
+| /plist | redisbungee.command.plist | /plist和/glist相似，但是可以被当前连接到代理端的玩家运行。此命令允许一个附加参数，即/plist、/plist atl1和/plist atl1 showall都对atl1有效。 |
 

@@ -1,11 +1,11 @@
-# Table of contents
+# 目录
 
-* [Home](README.md)
+* [主页](README.md)
 * [API](api.md)
-* [Commands](commands.md)
-* [Configuration](configuration.md)
-* [FAQ](faq.md)
-* [Installation](installation.md)
-* [Plugins](plugins.md)
-* [Usage](usage.md)
+* [命令](commands.md)
+* [配置](configuration.md)
+* [常见问题](faq.md)
+* [安装](installation.md)
+* [插件](plugins.md)
+* [用法](usage.md)
 

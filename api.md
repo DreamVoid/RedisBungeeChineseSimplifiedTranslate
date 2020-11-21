@@ -1,36 +1,38 @@
 # API
 
-**RedisBungee** is the leading player synchronization system for BungeeCord.
+**RedisBungee**是先进的BungeeCord玩家同步系统。
 
-RedisBungee is pragmatically accessible in a few ways.
+RedisBungee提供好用方便的集成方式。
 
-## API stability \#\#
+## API稳定性
 
-In general, API-breaking changes are only introduced for new major releases \(e.g. 0.2.5 to 0.3\).
+通常来说，API-breaking`（译注：破坏性API）`的更改仅在较新的版本中（例如0.2.5到0.3）可用。
 
-## Recommended: The RedisBungee Java API \(BungeeCord\) \#\#
+## 推荐：RedisBungee Java API \(BungeeCord\)
 
-The recommended way to access RedisBungee is via the RedisBungee Java API, which is available to BungeeCord plugins.
+集成RedisBungee的最佳方法是使用RedisBungee Java API，这种方法可用于BungeeCord插件。
 
-The Javadoc for the API is available from [md\_5's build server](http://ci.md-5.net/job/RedisBungee/javadoc/com/imaginarycode/minecraft/redisbungee/RedisBungeeAPI.html).
+有关此API的Javadoc可以在[md\_5的构建服务器](http://ci.md-5.net/job/RedisBungee/javadoc/com/imaginarycode/minecraft/redisbungee/RedisBungeeAPI.html)获取。
 
-### Maven \#\#\#
+### Maven
 
-The following repository has all RedisBungee builds:
+下列仓库包含了所有RedisBungee的构建：
 
-md\_5-snapshotshttp://repo.md-5.net/content/repositories/snapshots/
+[md\_5-snapshots](http://repo.md-5.net/content/repositories/snapshots/)
 
-Afterwards, you can add the dependency:
+之后，您可以在您的插件项目中添加以下依赖项：
 
-com.imaginarycode.minecraftRedisBungee0.3.6-SNAPSHOTprovided
+com.imaginarycode.minecraftRedisBungee0.3.6-SNAPSHOT provided
 
-## Plugin Messaging \(Bukkit\) \#\#
+`译者注：有对原文进行小幅修改以便阅读。`
 
-From Bukkit, you can access some RedisBungee functionality via the plugin messaging API. RedisBungee listens on its own plugin messaging channel \(RedisBungee\), and expects all messages in Data{Input,Output}Stream format.
+## 插件消息传递 \(Bukkit\)
 
-### Examples \#\#\#
+在Bukkit服务端中，您可以通过使用插件消息传递API来集成RedisBungee的一些功能。RedisBungee会监听此API \(RedisBungee\)，并且传递的消息应均为 Data{Input,Output}Stream 格式。
 
-**Sending messages**
+### 接口例程
+
+**发送消息**
 
 ```text
 ByteArrayDataOutput out = ByteStreams.newDataOutput();
@@ -39,7 +41,7 @@ out.writeUTF("ALL");
 player.sendPluginMessage(MyPlugin.getInstance(), "RedisBungee", out.toByteArray());
 ```
 
-**Deserializing ServerPlayers results**
+**解析ServerPlayers的返回内容**
 
 ```text
 private Multiset<String> deserializeNoMembers(ByteArrayDataInput input) {
@@ -68,28 +70,30 @@ private Multimap<String, String> deserializeWithMembers(ByteArrayDataInput input
 }
 ```
 
-**Definitions**
+**定义**
 
-* Player
-  * Username or UUID \(Java or Mojang-style\)
+* 玩家
+  * 名称或UUID \(Java或Mojang\)
 
-**Commands**
+**命令**
 
-| Subchannel | Arguments | Response | Notes |
+| 子通道 | 参数 | 响应 | 注释 |
 | :--- | :--- | :--- | :--- |
-| PlayerList | Server or ALL | The command returned \(but see the notes\), then a comma-separated list of players. | Due to a bug \(fixed in 0.3.2\), the first string of the response was **Players**, not **PlayerList**. |
-| PlayerCount | Server or ALL | The command returned, then the number of players found. |  |
-| LastOnline | See `Definitions` | The command returned, then a long specified by the output of the [getLastOnline\(\)](http://ci.md-5.net/job/RedisBungee/javadoc/com/imaginarycode/minecraft/redisbungee/RedisBungeeAPI.html#getLastOnline%28java.util.UUID%29) API. |  |
-| Proxy | _none_ | The command returned, then the proxy's name | Introduced in 0.3.6 \(June 29, 2015\) |
-| ServerPlayers | COUNT or PLAYERS | The command returned, then the type specified, then a serialized multimap | Introduced in 0.3.6 \(June 29, 2015\) |
+| PlayerList | Server或ALL | 此命令将会返回使用逗号分隔的玩家列表\(参见注释\)。| 由于存在一个Bug \(0.3.2已修复\)，第一个字符串将是**Players**而不是**PlayerList**。 |
+| PlayerCount | Server或ALL | 此命令将会返回玩家人数。 |  |
+| LastOnline | 参见`定义`部分 | 此命令返回后，由[getLastOnline\(\)](http://ci.md-5.net/job/RedisBungee/javadoc/com/imaginarycode/minecraft/redisbungee/RedisBungeeAPI.html#getLastOnline%28java.util.UUID%29)接口输出一个长整数。 | `译者注：给出的链接提示403，因此无法得知此接口的具体用法。` |
+| Proxy | _无_ | 此命令将会返回当前BungeeCord代理的ID | 于0.3.6版本加入 \(2015年6月29日\) |
+| ServerPlayers | COUNT或PLAYERS | 此命令将会返回参数指定的类型，然后为排序后的multimap | 于0.3.6版本加入 \(2015年6月29日\)  `译者注：multimap实在不知道怎么翻译，应该是字符串一类` |
 
-## Redis PubSub \#\#
+## Redis PubSub
 
-RedisBungee supports Redis PubSub. PUBLISH a command to `redisbungee-allservers` to a BungeeCord command on all servers, or `redisbungee-<SERVERID>` to invoke the command on just one server. You can also listen on a separate PubSub channel and handle the PubSubMessageEvent event for it, starting with RedisBungee 0.3. See the \[registerPubSubChannels\(\)\]\([http://ci.md-5.net/job/RedisBungee/javadoc/com/imaginarycode/minecraft/redisbungee/RedisBungeeAPI.html\#registerPubSubChannels\(java.lang.String](http://ci.md-5.net/job/RedisBungee/javadoc/com/imaginarycode/minecraft/redisbungee/RedisBungeeAPI.html#registerPubSubChannels%28java.lang.String)...\)\), \[unregisterPubSubChannels\(\)\]\([http://ci.md-5.net/job/RedisBungee/javadoc/com/imaginarycode/minecraft/redisbungee/RedisBungeeAPI.html\#unregisterPubSubChannels\(java.lang.String](http://ci.md-5.net/job/RedisBungee/javadoc/com/imaginarycode/minecraft/redisbungee/RedisBungeeAPI.html#unregisterPubSubChannels%28java.lang.String)...\)\) and [PubSubMessageEvent](http://ci.md-5.net/job/RedisBungee/javadoc/com/imaginarycode/minecraft/redisbungee/events/PubSubMessageEvent.html).
+RedisBungee支持Redis PubSub。将一个命令通过`redisbungee-allservers`从其中一个BungeeCord服务端发布到所有服务端执行，或通过`redisbungee-<SERVERID>`发布到指定的一个服务端执行。从RedisBungee 0.3版本开始，您也可以从单独的PubSub通道上监听PubSubMessageEvent事件。参见[registerPubSubChannels\(\)]([http://ci.md-5.net/job/RedisBungee/javadoc/com/imaginarycode/minecraft/redisbungee/RedisBungeeAPI.html\#registerPubSubChannels\(java.lang.String](http://ci.md-5.net/job/RedisBungee/javadoc/com/imaginarycode/minecraft/redisbungee/RedisBungeeAPI.html#registerPubSubChannels%28java.lang.String)...)、[unregisterPubSubChannels\(\)]([http://ci.md-5.net/job/RedisBungee/javadoc/com/imaginarycode/minecraft/redisbungee/RedisBungeeAPI.html\#unregisterPubSubChannels\(java.lang.String](http://ci.md-5.net/job/RedisBungee/javadoc/com/imaginarycode/minecraft/redisbungee/RedisBungeeAPI.html#unregisterPubSubChannels%28java.lang.String)...\))和[PubSubMessageEvent](http://ci.md-5.net/job/RedisBungee/javadoc/com/imaginarycode/minecraft/redisbungee/events/PubSubMessageEvent.html)。`译者注：有对原文进行小幅修改以便阅读。`
 
-If you are invoking a command, make sure that the sender is an instance of `RedisBungeeCommandSender`!
+如果您需要调用其中的命令，请确保来自`RedisBungeeCommandSender`！
 
-## Not recommended: Tinkering with RedisBungee's datasets \#\#
+## 不推荐：使用RedisBungee数据集进行``集成（Tinkering）``
 
-While this is possible, doing so will cause problems when RedisBungee's data schema changes \(which is sometimes quite often\). A good example of this is the 0.2.x to 0.3.x transition, when UUIDs were stored instead of usernames. RedisBungee does everything humanely possible to hide its internals from other plugins, so backend changes can be made with ease.
+尽管可以实现，但是这将在更待RedisBungee的数据模式后引发问题（这种问题很常见）一个很好的例子是从版本0.2.x升级到0.3.x，插件将开始存储UUID而非用户名。RedisBungee尽一切可能以人性化的方式从其他插件中隐藏自身内部的一些信息，由此您就可以轻松的进行后端更改。
+
+`译者注：这里应该是作者在说升级到0.3版本可以避免在后台改东西的时候其他插件偷数据（不过一个BC端有什么数据好偷的呢）`
 
